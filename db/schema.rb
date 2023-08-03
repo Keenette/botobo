@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_03_083138) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_03_084335) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.bigint "exercice_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercice_id"], name: "index_categories_on_exercice_id"
+  end
 
   create_table "exercices", force: :cascade do |t|
     t.string "description"
@@ -20,6 +27,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_083138) do
     t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer "frequency"
+    t.bigint "user_id", null: false
+    t.bigint "categories_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["categories_id"], name: "index_subscriptions_on_categories_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_083138) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "categories", "exercices"
+  add_foreign_key "subscriptions", "categories", column: "categories_id"
+  add_foreign_key "subscriptions", "users"
 end

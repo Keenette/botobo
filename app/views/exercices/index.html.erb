@@ -1,0 +1,6 @@
+
+<h1>Exercices</h1>
+<ul>
+<% @exercices.each do |exercice| %>
+<li><%= link_to exercice.name, exercice_path(exercice) %></li>
+<% end %> </ul>
