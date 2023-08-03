@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_084335) do
   end
 
   create_table "exercices", force: :cascade do |t|
+    t.string "name"
     t.string "description"
     t.integer "difficulty_level"
     t.integer "duration"
