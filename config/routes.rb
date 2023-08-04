@@ -11,12 +11,11 @@ Rails.application.routes.draw do
 
   resources :exercices do
     resources :categories
-
   end
-  resources :categories, only: [:show, :edit, :update, :destroy] do
-    resources :subscriptions, only: [:new, :create]
+  resources :categories do
+    resources :subscriptions
   end
-  resources :subscriptions, only: [:show, :edit, :update, :destroy] do
-    resources :users, only: [:new, :create]
+  resources :subscriptions do
+    resources :users
   end
 end
