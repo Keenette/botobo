@@ -18,10 +18,10 @@ Exercice.create!(name: "Bench Press", description: "Lie on your back on a flat b
 Exercice.create!(name: "Position du chat assis", description: "Vous positionner à quatre pattes. Placer les mains bien à plat au sol, aligner les épaules avec les poignets et les genoux avec les hanches. Prendre une profonde inspiration, relever la tête vers le ciel et créer un creux dans le bas de votre dos.", duration: 2)
 Exercice.create!(name: "shadow boxing", description: "Le shadowboxing est un excellent moyen de se concentrer sur la forme. Il n’est pas nécessaire de donner des coups de poing rapides au sac ou à un adversaire, et rien ne retournera les coups. Vous pouvez donc vous concentrer sur votre forme en pratiquant votre position et en développant de solides habitudes de combat.", duration: 4)
 
-puts "Generate a category."
-Categorie.create!(name: "Assouplissement")
-Categorie.create!(name: "Renforcement musculaire")
-Categorie.create!(name: "Cardio")
+# puts "Generate a category."
+# Categorie.create!(name: "Assouplissement")
+# Categorie.create!(name: "Renforcement musculaire")
+# Categorie.create!(name: "Cardio")
 # puts "Generate a subscription."
 # Subscription.create!(frequency: 1)
 puts "finished"
