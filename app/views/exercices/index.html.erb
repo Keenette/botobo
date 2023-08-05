@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
     <h1>Découvres des exercices adaptés à ton envie de Botobo !</h1>
-      <ul><% @exercice.each do |exercice| %>
+      <ul><% @exercices.each do |exercice| %>
         <li><%= link_to exercice.name, exercice_path(exercice) %></li>
-        <% end %> </ul>
-      <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a>
+          <% end %> </ul>
+
   </div>
+    <a href="/exercices/new" class="btn btn-secondary">Crée un exercice</a>
 </div>
