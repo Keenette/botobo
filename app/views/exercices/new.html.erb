@@ -1,6 +1,6 @@
 <div class="container">
 <h1>Ajoute un exercice !</h1>
-<%= simple_form_for @exercices do |f| %>
+<%= simple_form_for (@exercice) do |f| %>
   <%= f.input :name, label: false, placeholder: "Nom" %>
   <%= f.input :description, label: false, placeholder: "Description" %>
   <%= f.input :difficulty_level, label: false, placeholder: "Niveau de difficulté de l'exercice" %>
@@ -9,7 +9,8 @@
                     as: :check_boxes,
                     input_html: { class: "tag-selector" },
                     item_wrapper_class: 'tag-item' %>
-  <%= f.button :submit,  "Enregistrer", class: "btn-primary" %>
-  <%exercice_path(@exercice) %>
+  <%= f.button :submit, class: "btn-primary", value: "Enregistrer" %>
+  <%= link_to 'Retour aux exercices', :back, class: "btn-secondary" %>
+  <%= exercice_path(@exercice) %>
 <% end %>
 </div>

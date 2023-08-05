@@ -1,6 +1,6 @@
 class ExercicesController < ApplicationController
   def index
-    @exercice = Exercice.all
+    @exercices = Exercice.all
   end
 
   def show
@@ -9,8 +9,12 @@ class ExercicesController < ApplicationController
 
   def new
     @exercice = Exercice.new
-    flash[:notice] = "Le nouvel exercice a été créé"
+  end
+
+  def create
+    @exercice = Exercice.new(exercice_params)
     @exercice.save
+    flash[:notice] = "Le nouvel exercice a été créé"
     redirect_to exercice_path(@exercice)
   end
 
