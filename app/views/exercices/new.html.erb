@@ -7,12 +7,14 @@
   <%= f.input :description, label: false, placeholder: "Description" %>
   <%= f.input :difficulty_level, label: false, placeholder: "Niveau de difficulté de l'exercice" %>
   <%= f.input :duration, label: false, placeholder: "Durée de l'exercice" %>
+  <%= f.input :video_url, label: false, placeholder: "URL de la vidéo" %>
+  <%= f.input :photo, label: false, placeholder: "URL de la photo" %>
   <%# <%= f.association :categories,
                     as: :check_boxes,
                     input_html: { class: "tag-selector" },
                     item_wrapper_class: 'tag-item' %>
   <%= f.button :submit, class: "btn-primary", value: "Enregistrer" %>
-  <%= link_to 'Retour aux exercices', class: "btn-secondary"  %>
+  <%= link_to  'Retour aux exercices',exercices_path, class: "btn-secondary"  %>
   <%# <%= exercice_path(@exercice) %>
     <% end %>
     </div>

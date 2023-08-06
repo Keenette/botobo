@@ -1,22 +1,41 @@
-<div class="banner">
+<div class="banner" style="background-image: url('<%= image_path('banner.png') %>');">
   <div class="container">
-  <h1>Bo to Bo !!</h1>
-  <%= image_tag "banner.png", height: "400px" %>
+    <h1>Bo to Bo !!</h1>
     <h2>Shake your health !</h2>
+      <div class="banner-text" style="margin-top: 30px" >
+        <% if user_signed_in? %>
+          <div class="banner-buttons">
+            <a href="/exercices" class="btn btn-primary">Découvrir les exercices</a>
+            <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a>
+            <a href="/subscription/new" class="btn btn-primary">Lance toi !</a>
+          </div>
+        <% else %>
+          <div class="banner-buttons">
+            <a href="/users/sign_up" class="btn btn-primary">S'inscrire</a>
+            <a href="/users/sign_in" class="btn btn-secondary">Se connecter</a>
+          </div>
+        <% end %>
+    </div>
   </div>
+</div>
+<div class="container" style="text-align: center"><h3>3 bonnes raisons de commencer à Bo to Bo :</h3></div>
 
-  <div class="banner-text" background-color= "#2a9d8fff">
-    <% if user_signed_in? %>
-      <div class="banner-buttons">
-        <a href="/exercices" class="btn btn-primary">Découvrir les exercices</a>
-        <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a>
-        <a href="/subscription/new" class="btn btn-primary">Lance toi !</a>
+<div class="container" >
+  <div class="card-product" class="inline">
+  <%= image_tag("homme.png") %>
+      <div class="col-md-4">
+        <div class="card-product-infos">
+    <div style="width: 382px; height: 286px; position: relative">
+      <div style="width: 48px; height: 48px; left: 34px; top: 42px; position: absolute">
+        <%# <div style="width: 48px; height: 48px; left: 0px; top: 0px; position: absolute; background: #2a9d8fff; border-radius: 15px"></div> %>
       </div>
-    <% else %>
-      <div class="banner-buttons">
-        <a href="/users/sign_up" class="btn btn-primary">S'inscrire</a>
-        <a href="/users/sign_in" class="btn btn-secondary">Se connecter</a>
+      <div style="width: 338px; height: 158px; left: 25px; top: 109px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 338px; height: 158px; color: #264653ff; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Bouger, quelques minutes, contribue à votre forme. Les études cliniques ont montré que la pratique régulière d'exercices pour entrecouper les moments oû vous travailler assis, améliorent votre forme physique et mentale.</div>
       </div>
-    <% end %>
+    </div>
+   </div>
   </div>
+</div>
+</div>
+ </div>
 </div>

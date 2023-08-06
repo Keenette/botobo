@@ -5,12 +5,15 @@
       <div class="text-center">
         <div class="row justify-content-evenly">
           <div class="col-4">
-            <p><i class="fa-sharp fa-solid fa-house"></i> <%= @exercice.description %></p>
+            <p> <i class="fa-solid fa-fire-alt"></i> <%= @exercice.description %></p>
+            <%= @exercice.photo%>
           </div>
           <div class="col-4">
-            <p><i class="fa-solid fa-bed"></i> <%= @exercice.duration %> </p>
+            <p><%= icon('fa-regular', 'bell')%> <%= @exercice.duration %> minutes</p>
+             <a href="/exercices/new" class="btn btn-secondary">Crée un exercice</a>
           </div>
-          <%= link_to "Back to all exercices", exercice_path %>
+          <%= link_to "Back to all exercices", exercices_path %>
+
         </div>
       </div>
     </div>
