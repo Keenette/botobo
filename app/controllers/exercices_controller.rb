@@ -1,10 +1,10 @@
 class ExercicesController < ApplicationController
+  before_action :set_exercice, only: [:show, :edit, :update, :destroy]
   def index
     @exercices = Exercice.all
   end
 
   def show
-    @exercice = Exercice.find(params[:id])
   end
 
   def new
@@ -18,9 +18,28 @@ class ExercicesController < ApplicationController
     redirect_to exercice_path(@exercice)
   end
 
+  def edit
+  end
+
+  def update
+    @exercice.update(exercice_params)
+    flash[:notice] = "L'exercice a été modifié"
+    redirect_to exercice_path(@exercice)
+  end
+
+  def destroy
+    @exercice.destroy
+    flash[:notice] = "L'exercice a été supprimé"
+    redirect_to exercices_path, status: :see_other
+  end
+
   private
 
+  def set_exercice
+    @exercice = Exercice.find(params[:id])
+  end
+
   def exercice_params
-    params.require(:exercice).permit(:name, :description, :category, :difficulty_level, :duration, video_url: [], photo: [])
+    params.require(:exercice).permit(:name, :description, :category, :difficulty_level, :duration, :photos, :videos)
   end
 end

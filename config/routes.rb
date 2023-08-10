@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :exercices do
     resources :categories
   end
+
   resources :categories do
     resources :subscriptions
   end

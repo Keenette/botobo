@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+<h1>Voici le titre de l'exercice à modifier : <%= @exercice.name %></h1>
+ <%= render "form", exercice: @exercice %>
+    </div>
+    <div class="col-6">
+      <div class="image-container">
+        <%= image_tag("banner2.jpg", alt: "Image de l'exercice") %>
+      </div>
+    </div>
+  </div>
+</div>
+

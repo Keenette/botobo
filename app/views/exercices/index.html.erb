@@ -1,10 +1,26 @@
 <div class="container">
   <div class="row">
-    <h1>Découvres des exercices adaptés à ton envie de Botobo !</h1>
-      <ul><% @exercices.each do |exercice| %>
-        <li><%= link_to exercice.name, exercice_path(exercice) %></li>
-          <% end %> </ul>
-
+    <h1>Découvre des exercices adaptés à ton envie de Botobo !</h1>
+    <ul class="cards-exercices">
+      <% @exercices.each do |exercice| %>
+        <li>
+          <%= link_to exercice_path(exercice) do %>
+            <div class="exercice-image">
+              <% if exercice.image.attached? %>
+                <%= image_tag exercice.image.variant(resize: "300x200") %>
+              <% else %>
+                <%= image_tag "default_exercice_image.jpg", size: "300x200", alt: "Image par défaut" %>
+              <% end %>
+            </div>
+            <div class="exercice-info">
+              <i class="fa-solid fa-fire-alt"></i> <%= exercice.duration %> minutes
+              <span class="exercice-name"><%= exercice.name %></span>
+              <span class="exercice-description"><%= exercice.description %></span>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a>
   </div>
-    <a href="/exercices/new" class="btn btn-secondary">Crée un exercice</a>
 </div>

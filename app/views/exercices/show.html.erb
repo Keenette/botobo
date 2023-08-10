@@ -1,19 +1,29 @@
 <div class="container mt-4">
-   <div class="row">
+  <div class="row">
     <div class="col">
       <h3><%= @exercice.name %></h3>
       <div class="text-center">
         <div class="row justify-content-evenly">
-          <div class="col-4">
-            <p> <i class="fa-solid fa-fire-alt"></i> <%= @exercice.description %></p>
-            <%= @exercice.photo%>
+          <div class="col-md-4">
+            <p><%= icon('fa-regular', 'bell') %> <%= @exercice.duration %> minutes</p>
+            <p><i class="fa-solid fa-fire-alt"></i> <%= @exercice.description %></p>
+            <% if @exercice.image.attached? %>
+              <%= image_tag @exercice.image.variant(resize: "300x200"), alt: "Exercise Image", class: "img-fluid" %>
+            <% else %>
+              <%= image_tag "default_exercice_image.jpg", alt: "Default Image", class: "img-fluid" %>
+            <% end %>
           </div>
-          <div class="col-4">
-            <p><%= icon('fa-regular', 'bell')%> <%= @exercice.duration %> minutes</p>
-             <a href="/exercices/new" class="btn btn-secondary">Crée un exercice</a>
+          <div class="col-md-4">
+            <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a>
+            <%= link_to "Modifier cet exercice", edit_exercice_path(@exercice), class: "btn btn-primary" %>
+          <%= link_to "Supprimer cet exercice",
+            exercice_path(@exercice),
+            data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"}
+          %>
           </div>
-          <%= link_to "Back to all exercices", exercices_path %>
-
         </div>
       </div>
+      <%= link_to "Retour vers les exercices", exercices_path, class: "btn btn-secondary mt-3" %>
     </div>
+  </div>
+</div>

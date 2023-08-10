@@ -1,7 +1,8 @@
 <div class="banner" style="background-image: url('<%= image_path('banner.png') %>');">
   <div class="container">
-    <h1>Bo to Bo !!</h1>
+    <h1>Bo to Bo* !!</h1>
     <h2>Shake your health !</h2>
+     <p>* Bouge ton boule</p>
       <div class="banner-text" style="margin-top: 30px" >
         <% if user_signed_in? %>
           <div class="banner-buttons">
@@ -20,22 +21,69 @@
 </div>
 <div class="container" style="text-align: center"><h3>3 bonnes raisons de commencer à Bo to Bo :</h3></div>
 
-<div class="container" >
-  <div class="card-product" class="inline">
-  <%= image_tag("homme.png") %>
-      <div class="col-md-4">
+
+
+
+<div class="container">
+  <div class="row card-container">
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card-product">
+        <!-- Point de couleur -->
+          <div class="color-circles">
+          <div class="color-circle" style="background: #2a9d8fff;"></div>
+          <div class="color-circle" style="background: #e9c46aff;"></div>
+          <div class="color-circle" style="background: #f4a261ff;"></div>
+          <div class="color-circle" style="background: #e76f51ff;"></div>
+        </div>
+        <%= image_tag("homme.png") %>
         <div class="card-product-infos">
-    <div style="width: 382px; height: 286px; position: relative">
-      <div style="width: 48px; height: 48px; left: 34px; top: 42px; position: absolute">
-        <%# <div style="width: 48px; height: 48px; left: 0px; top: 0px; position: absolute; background: #2a9d8fff; border-radius: 15px"></div> %>
-      </div>
-      <div style="width: 338px; height: 158px; left: 25px; top: 109px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-        <div style="width: 338px; height: 158px; color: #264653ff; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Bouger, quelques minutes, contribue à votre forme. Les études cliniques ont montré que la pratique régulière d'exercices pour entrecouper les moments oû vous travailler assis, améliorent votre forme physique et mentale.</div>
+          <!-- Titre et description -->
+          <h2>Booster votre forme </h2>
+          <p>Votre description ici...</p>
+        </div>
       </div>
     </div>
-   </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card-product">
+        <!-- Point de couleur -->
+        <div class="color-circles">
+          <div class="color-circle" style="background: #2a9d8fff;"></div>
+          <div class="color-circle" style="background: #e9c46aff;"></div>
+          <div class="color-circle" style="background: #f4a261ff;"></div>
+          <div class="color-circle" style="background: #e76f51ff;"></div>
+        </div>
+        <div class="color-point"></div>
+        <%= image_tag("mental.jpg") %>
+        <div class="card-product-infos">
+          <!-- Titre et description -->
+          <h2>Sharper votre mental</h2>
+          <p>Votre description ici...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card-product">
+        <!-- Point de couleur -->
+        <div class="color-circles">
+          <div class="color-circle" style="background: #2a9d8fff;"></div>
+          <div class="color-circle" style="background: #e9c46aff;"></div>
+          <div class="color-circle" style="background: #f4a261ff;"></div>
+          <div class="color-circle" style="background: #e76f51ff;"></div>
+        </div>
+        <div class="color-point"></div>
+        <%= image_tag("health.jpg") %>
+        <div class="card-product-infos">
+          <!-- Titre et description -->
+          <h2>Rester en santé</h2>
+          <p>Votre description ici...</p>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
-</div>
- </div>
 </div>
