@@ -21,6 +21,7 @@
         </li>
       <% end %>
     </ul>
-    <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a>
+    <%# <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a> %>
+    <% link_to "Créer un exercice", new_exercice_path(exercice), class: "btn btn-secondary"%>
   </div>
 </div>
