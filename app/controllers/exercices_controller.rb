@@ -8,7 +8,7 @@ class ExercicesController < ApplicationController
   end
 
   def new
-    @exercice = Exercice.new
+    @exercice = Exercice.new(name: '', description: '', difficulty_level: '', duration: '')
   end
 
   def create
