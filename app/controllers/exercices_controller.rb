@@ -8,14 +8,17 @@ class ExercicesController < ApplicationController
   end
 
   def new
-    @exercice = Exercice.new
+    @exercice = Exercice.new(name: '', description: '', difficulty_level: '', duration: '')
   end
 
   def create
     @exercice = Exercice.new(exercice_params)
-    @exercice.save
-    flash[:notice] = "Le nouvel exercice a été créé"
-    redirect_to exercice_path(@exercice)
+    if @exercice.save
+      flash[:notice] = "Le nouvel exercice a été créé"
+      redirect_to exercice_path(@exercice)
+    else
+      render :new
+    end
   end
 
   def edit
