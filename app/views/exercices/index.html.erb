@@ -6,8 +6,8 @@
         <li>
           <%= link_to exercice_path(exercice) do %>
             <div class="exercice-image">
-              <% if exercice.image.attached? %>
-                <%= image_tag exercice.image.variant(resize: "300x200") %>
+              <% if exercice.photo.attached? %>
+                <%= cl_image_tag exercice.photo.key, height: 300, width: 400, crop: :fill %>
               <% else %>
                 <%= image_tag "default_exercice_image.jpg", size: "300x200", alt: "Image par défaut" %>
               <% end %>
@@ -21,7 +21,6 @@
         </li>
       <% end %>
     </ul>
-    <%# <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a> %>
-    <%= link_to "Créer un exercice", new_exercice_path, class: "btn btn-secondary"%>
+    <%= link_to "Créer un exercice", new_exercice_path, class: "btn btn-secondary" %>
   </div>
 </div>

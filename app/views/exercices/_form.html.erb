@@ -5,8 +5,7 @@
   <%= f.input :difficulty_level, label: false, placeholder: "Niveau de difficulté de l'exercice" %>
   <%= f.input :duration, label: false, placeholder: "Durée de l'exercice" %>
   <%# <%= f.input :video_url, label: false, placeholder: "URL de la vidéo" %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.input :videos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :photo, as: :file %>
   <%# <%= f.association :categories,
                     as: :check_boxes,
                     input_html: { class: "tag-selector" },

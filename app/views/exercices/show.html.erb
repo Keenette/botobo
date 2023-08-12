@@ -7,8 +7,8 @@
           <div class="col-md-4">
             <p><%= icon('fa-regular', 'bell') %> <%= @exercice.duration %> minutes</p>
             <p><i class="fa-solid fa-fire-alt"></i> <%= @exercice.description %></p>
-            <% if @exercice.image.attached? %>
-              <%= image_tag @exercice.image.variant(resize: "300x200"), alt: "Exercise Image", class: "img-fluid" %>
+            <% if @exercice.photo.attached? %>
+              <%= cl_image_tag @exercice.photo.key, height: 300, width: 400, crop: :fill %>
             <% else %>
               <%= image_tag "default_exercice_image.jpg", alt: "Default Image", class: "img-fluid" %>
             <% end %>
