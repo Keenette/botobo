@@ -51,14 +51,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_101815) do
   end
 
   create_table "exercices", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "description"
     t.integer "difficulty_level"
     t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    # t.string "photo"
-    # t.string "video_url"
+    t.string "photo"
+    t.string "video_url"
   end
 
   create_table "subscriptions", force: :cascade do |t|
