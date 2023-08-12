@@ -1,4 +1,4 @@
-
+<%= javascript_pack_tag 'exercice_new' %>
 
 <div class="container">
   <div class="row">
@@ -10,6 +10,12 @@
   <%= f.input :difficulty_level, label: false, placeholder: "Niveau de difficulté de l'exercice" %>
   <%= f.input :duration, label: false, placeholder: "Durée de l'exercice" %>
    <%= f.input :photo, as: :file %>
+   <div>
+    <h1>Télécharge ton fichier</h1>
+    <div>
+      <button id="upload_widget" class="cloudinary-button">Upload files</button>
+    </div>
+  </div>
   <%# <%= f.input :video_url, label: false, placeholder: "URL de la vidéo" %>
   <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%# <%= f.input :videos, as: :file, input_html: { multiple: true } %>
