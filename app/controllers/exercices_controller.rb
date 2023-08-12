@@ -1,5 +1,5 @@
 class ExercicesController < ApplicationController
-  before_action :set_exercice, only: [:show, :edit, :update, :destroy]
+  before_action :set_exercice, only: [:new, :show, :edit, :update, :destroy]
   def index
     @exercices = Exercice.all
   end
