@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "botobo-1974-e4a3492dde7c.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "https://git.heroku.com/botobo-2023.git" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
