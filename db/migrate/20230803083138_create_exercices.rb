@@ -4,6 +4,7 @@ class CreateExercices < ActiveRecord::Migration[7.0]
       t.string :description
       t.integer :difficulty_level
       t.integer :duration
+      t.string :name
 
       t.timestamps
     end
