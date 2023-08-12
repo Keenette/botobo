@@ -43,6 +43,6 @@ class ExercicesController < ApplicationController
   end
 
   def exercice_params
-    params.require(:exercice).permit(:name, :description, :category, :difficulty_level, :duration, :photo, :video_url)
+    params.require(:exercice).permit(:name, :description, :difficulty_level, :duration)
   end
 end
