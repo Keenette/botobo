@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :exercices
+
+  has_many :subscriptions
+  has_many :exercices, through: :subscriptions
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -18,4 +20,8 @@ class User < ApplicationRecord
   def set_default_role
     self.role ||= :user
   end
+
+  # def subscribed_to?(category)
+  #   self.categories.include?(category)
+  # end
 end

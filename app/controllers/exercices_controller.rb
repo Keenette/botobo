@@ -1,14 +1,17 @@
 class ExercicesController < ApplicationController
   before_action :set_exercice, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   def index
-    @exercices = policy_scope(Exercice.all)
+    @exercices = policy_scope(Exercice)
     authorize @exercices
+    @exercices = Exercice.all
   end
 
   def show
+    @exercice = Exercice.find(params[:id])
   end
+
 
   def new
     @exercice = Exercice.new

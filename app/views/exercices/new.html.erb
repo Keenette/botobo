@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-    <%= if policy (Exercice).create?%>
+    <%= if policy(Exercice).create?%>
       <h1>Ajoute un exercice !</h1>
       <%= simple_form_for(@exercice) do |f| %>
   <%= f.input :name, label: false, placeholder: "Nom" %>

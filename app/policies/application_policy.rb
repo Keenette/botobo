@@ -41,8 +41,13 @@ class ApplicationPolicy
     end
 
     def resolve
-      user.admin? ? scope.all : scope.where(user: user)
+      if user
+        user.admin? ? scope.all : scope.where(user: user)
+      else
+        scope.all # ou scope.none, selon ce que vous souhaitez afficher aux utilisateurs non connectés.
+      end
     end
+
 
     private
 

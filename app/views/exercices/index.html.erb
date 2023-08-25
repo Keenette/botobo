@@ -21,8 +21,9 @@
         </li>
       <% end %>
     </ul>
-    <% if policy(Exercice).create?%>
-      <%= link_to "Créer un nouvel exercice", new_exercice_path, class: "btn btn-secondary" %>
-    <% end %>
+<% if policy(Exercice.new).create? %>
+  <%= link_to "Créer un nouvel exercice", new_exercice_path, class: "btn btn-secondary" %>
+<% end %>
+
   </div>
 </div>

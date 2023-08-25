@@ -19,7 +19,7 @@
           <%= link_to "Modifier cet exercice", edit_exercice_path(@exercice), class: "btn btn-primary" %>
           <% end %>
 
-            <%= if policy(Exercice).destroy?%>
+           <% if policy(@exercice).destroy? %>
           <%= link_to "Supprimer cet exercice",
             exercice_path(@exercice),
             data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"}
@@ -32,4 +32,3 @@
     </div>
   </div>
 </div>
-

@@ -1,12 +1,15 @@
 class ExercicePolicy < ApplicationPolicy
   attr_reader :user, :record
 
-  class Scope < Scope
-    def resolve
-      user.admin? ? scope.all : scope.joins(:categories).where(categories: { user_id: user.id })
-    end
-  end
+  # class Scope < Scope
+  #   def resolve
+  #     # If user is not signed in or is an admin, return all records
+  #     return scope.all unless user && !user.admin?
 
+  #     # If user is a non-admin, filter the records based on their associations
+  #     scope.joins(:categories).where(categories: { user_id: user.id })
+  #   end
+  # end
   def index?
     true
   end
@@ -20,8 +23,10 @@ class ExercicePolicy < ApplicationPolicy
   end
 
   def create?
-    authorize @user.un_club_sportif?
+    user&.un_club_sportif?
   end
+
+
 
   def update?
     record.categories.any? { |category| category.user_id == user.id } || user.admin? || user.un_club_sportif?

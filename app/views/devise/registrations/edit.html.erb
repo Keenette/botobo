@@ -21,11 +21,12 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-      <%= f.input :role,
-                :label => "Je suis",
-                collection: [['un club sportif'], ['un particulier']],
-                required: true,
-                autofocus: true%>
+    <%= f.input :role,
+            :label => "Je suis",
+            collection: [['Un particulier', 'un_particulier'], ['Un club sportif', 'un_club_sportif']],
+            required: true,
+            autofocus: true %>
+
   </div>
 
   <div class="form-actions">
