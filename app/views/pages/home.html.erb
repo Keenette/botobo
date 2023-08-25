@@ -2,35 +2,32 @@
   <div class="container">
     <h1>Bo to Bo* !!</h1>
     <h2>Shake your health !</h2>
-     <p>* Bouge ton boule</p>
-      <div class="banner-text" style="margin-top: 30px" >
-        <% if user_signed_in? %>
-          <div class="banner-buttons">
-          <%= link_to "Découvrir les exercices", exercices_path, class: "btn btn-primary"%>
-          <%= link_to "Créer un exercice", new_exercice_path, class: "btn btn-secondary"%>
-          <%= link_to "Lance toi !", new_subscription_path, class: "btn btn-primary"%>
-          </div>
-        <% else %>
-          <div class="banner-buttons">
-            <%= link_to "Se connecter", new_user_session , class: "btn btn-primary"%>
-            <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-primary"%>
-          </div>
-        <% end %>
+    <p>* Bouge ton boule</p>
+    <div class="banner-text" style="margin-top: 30px" >
+     <% if user_signed_in? %>
+        <div class="banner-buttons">
+          <%= link_to "Découvre les exercices", exercices_path, class: "btn btn-primary"%>
+            <%= link_to "Crée un exercice", new_exercice_path, class: "btn btn-secondary" if current_user.role == 'un club sportif'%>
+
+      <% else %>
+        <div class="banner-buttons">
+         <%= link_to "Découvre les exercices", exercices_path, class: "btn btn-primary"%>
+          <%= link_to "Abonne toi !", new_subscription_path, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
 <div class="container" style="text-align: center"><h3>3 bonnes raisons de commencer à Bo to Bo :</h3></div>
-
-
-
 
 <div class="container">
   <div class="row card-container">
     <!-- Card 1 -->
     <div class="col-md-4">
       <div class="card-product">
-        <!-- Point de couleur -->
-          <div class="color-circles">
+        <!-- Pond de couleur -->
+        <div class="color-circles">
           <div class="color-circle" style="background: #2a9d8fff;"></div>
           <div class="color-circle" style="background: #e9c46aff;"></div>
           <div class="color-circle" style="background: #f4a261ff;"></div>
@@ -39,7 +36,7 @@
         <%= image_tag("homme.png") %>
         <div class="card-product-infos">
           <!-- Titre et description -->
-          <h2>Booster votre forme </h2>
+          <h2>Booster votre forme</h2>
           <p>Votre description ici...</p>
         </div>
       </div>
@@ -48,7 +45,7 @@
     <!-- Card 2 -->
     <div class="col-md-4">
       <div class="card-product">
-        <!-- Point de couleur -->
+        <!-- Pond de couleur -->
         <div class="color-circles">
           <div class="color-circle" style="background: #2a9d8fff;"></div>
           <div class="color-circle" style="background: #e9c46aff;"></div>
@@ -68,7 +65,7 @@
     <!-- Card 3 -->
     <div class="col-md-4">
       <div class="card-product">
-        <!-- Point de couleur -->
+        <!-- Pond de couleur -->
         <div class="color-circles">
           <div class="color-circle" style="background: #2a9d8fff;"></div>
           <div class="color-circle" style="background: #e9c46aff;"></div>
@@ -83,7 +80,6 @@
           <p>Votre description ici...</p>
         </div>
       </div>
-
     </div>
   </div>
 </div>

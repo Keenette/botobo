@@ -1,7 +1,10 @@
 class ExercicesController < ApplicationController
   before_action :set_exercice, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!
+
   def index
-    @exercices = Exercice.all
+    @exercices = policy_scope(Exercice.all)
+    authorize @exercices
   end
 
   def show
@@ -9,10 +12,12 @@ class ExercicesController < ApplicationController
 
   def new
     @exercice = Exercice.new
+    authorize @exercice
   end
 
   def create
     @exercice = Exercice.new(exercice_params)
+    authorize @exercice
     if @exercice.save
       flash[:notice] = "Le nouvel exercice a été créé"
       redirect_to exercice_path(@exercice)
@@ -40,6 +45,7 @@ class ExercicesController < ApplicationController
 
   def set_exercice
     @exercice = Exercice.find(params[:id])
+    authorize @exercice
   end
 
   def exercice_params

@@ -15,11 +15,16 @@
           </div>
           <div class="col-md-4">
             <a href="/exercices/new" class="btn btn-secondary">Créer un exercice</a>
-            <%= link_to "Modifier cet exercice", edit_exercice_path(@exercice), class: "btn btn-primary" %>
+          <% if policy(@exercice).edit? %>
+          <%= link_to "Modifier cet exercice", edit_exercice_path(@exercice), class: "btn btn-primary" %>
+          <% end %>
+
+            <%= if policy(Exercice).destroy?%>
           <%= link_to "Supprimer cet exercice",
             exercice_path(@exercice),
             data: {turbo_method: :delete, turbo_confirm: "Etes vous sur?"}
           %>
+          <% end %>
           </div>
         </div>
       </div>
@@ -27,3 +32,4 @@
     </div>
   </div>
 </div>
+

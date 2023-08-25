@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # ecrire les routes pour les subscriptions qui sont dans un user
 
   resources :exercices do
-    resources :categories
+    resources :categories, only:[:new, :create]
   end
 
   resources :categories do
