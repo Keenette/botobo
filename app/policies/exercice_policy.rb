@@ -19,7 +19,7 @@ class ExercicePolicy < ApplicationPolicy
   end
 
   def new?
-    authorize @user.un_club_sportif?
+    @user.un_club_sportif?
   end
 
   def create?

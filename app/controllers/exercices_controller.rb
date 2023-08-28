@@ -12,7 +12,6 @@ class ExercicesController < ApplicationController
     @exercice = Exercice.find(params[:id])
   end
 
-
   def new
     @exercice = Exercice.new
     authorize @exercice
