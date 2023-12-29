@@ -19,7 +19,7 @@ class ApplicationPolicy
   end
 
   def create?
-    current_user.role == "un club sportif"
+    current_user.role == "un club sportif" 
   end
 
   def update?

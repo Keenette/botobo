@@ -26,8 +26,6 @@ class ExercicePolicy < ApplicationPolicy
     user&.un_club_sportif?
   end
 
-
-
   def update?
     record.categories.any? { |category| category.user_id == user.id } || user.admin? || user.un_club_sportif?
   end

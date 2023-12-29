@@ -4,9 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
   has_many :subscriptions
-  has_many :exercices, through: :subscriptions
+  has_many :categories, through: :subscriptions
 
   validates :first_name, presence: true
   validates :last_name, presence: true

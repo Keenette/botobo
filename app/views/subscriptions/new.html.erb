@@ -1,0 +1,4 @@
+<%= simple_form_for @subscription, url: subscriptions_path do |f| %>
+  <%= f.input :category_ids, as: :check_boxes, collection: Category.all.map { |c| [c.name, c.id] }, label: "Catégories" %>
+  <%= f.button :submit, 'Souscrire' %>
+<% end %>

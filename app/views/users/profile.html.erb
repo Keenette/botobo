@@ -1,0 +1,7 @@
+<%= simple_form_for @subscription do |f| %>
+  <% Category.all.each do |category| %>
+    <%= f.input :category_ids, as: :check_boxes, collection: [[category.name, category.id]], label: false, inline_label: category.name %>
+  <% end %>
+
+  <%= f.button :submit, 'Souscrire' %>
+<% end %>
